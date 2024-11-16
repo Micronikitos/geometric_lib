@@ -4,33 +4,28 @@ on:
   push:
     branches:
       - main
-      - release
+      - release/*
   pull_request:
     branches:
       - master
-      - release
+      - release/*
       - develop
-      - feat/tests
 
 jobs:  
   test:                   
     runs-on: ubuntu-latest
 
-    env:
-      FULL_NAME: "Моломожнов Никита Владимирович"
-      GROUP: "М3111"
-
     steps:
-      - name: Checkout code    
+      - name: Checkout code
         uses: actions/checkout@v3
                          
-      - name: Print developer info 
-        run: echo "ФИО: ${{ env.FULL_NAME }}, Группа: ${{ env.GROUP }}, Github: ${{ github.actor }}"
+      - name: Print developer info
+        run: echo "ФИО: Моломожнов Никита, Группа: М3111, Github: ${{ github.actor }}"
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.13'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
