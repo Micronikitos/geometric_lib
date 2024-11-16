@@ -26,9 +26,6 @@ jobs:
           echo "GROUP=М3111" >> $GITHUB_ENV
           echo "GITHUB_USER=${{ github.actor }}" >> $GITHUB_ENV
 
-      - name: Print developer info
-        run: echo "ФИО: $FULL_NAME, Группа: $GROUP, Github: $GITHUB_USER"
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
