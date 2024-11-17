@@ -14,29 +14,34 @@ on:
 jobs:  
   test:                   
     runs-on: ubuntu-latest
-          
-    env:
-      FULL_NAME: "Моломожнов Никита Владимирович"
-      GROUP: "М3111"
 
-    steps:               
-      - name: Checkout code    
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v3
                          
-      - name: Print developer info 
-        run: echo "ФИО: ${{ env.FULL_NAME }}, Группа: ${{ env.GROUP }}, Github: ${{ github.actor }}"
-                              
+      - name: Set developer info
+        id: set_info
+        run: |
+          echo "FULL_NAME=Моломожнов Никита" >> $GITHUB_ENV
+          echo "GROUP=М3111" >> $GITHUB_ENV
+          echo "GITHUB_USER=${{ github.actor }}" >> $GITHUB_ENV
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            echo "Файл requirements.txt не найден!"
+            exit 1
+          fi
 
       - name: Run tests
         run: pytest
 
       - name: Check code style
         run: flake8 .
-
