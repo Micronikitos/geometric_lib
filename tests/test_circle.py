@@ -1,11 +1,11 @@
 import unittest
 import calculate
 
-class TestCircle(unittest.TestCase):
 
-    '''
+class TestCircle(unittest.TestCase):
+    """
     area test
-    '''
+    """
 
     def test_zero_area_circle(self):
         res = calculate.calc("circle", "area", [0])
@@ -23,9 +23,9 @@ class TestCircle(unittest.TestCase):
         res = calculate.calc("circle", "area", ["6"])
         self.assertEqual(res, "arguments must be integer")
 
-    '''
+    """
     perimeter test
-    '''
+    """
 
     def test_zero_perimeter_circle(self):
         res = calculate.calc("circle", "perimeter", [0])

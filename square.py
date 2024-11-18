@@ -1,4 +1,3 @@
-
 def area(a):
     if type(a) == str:
         return "arguments must be integer"

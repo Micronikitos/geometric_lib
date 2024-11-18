@@ -1,11 +1,11 @@
 import unittest
 import calculate
 
-class TestSquare(unittest.TestCase):
 
-    '''
+class TestSquare(unittest.TestCase):
+    """
     area test
-    '''
+    """
 
     def test_zero_area_square(self):
         res = calculate.calc("square", "area", [0])
@@ -23,9 +23,9 @@ class TestSquare(unittest.TestCase):
         res = calculate.calc("square", "area", ["6"])
         self.assertEqual(res, "arguments must be integer")
 
-    '''
+    """
     perimeter test
-    '''
+    """
 
     def test_zero_perimeter_square(self):
         res = calculate.calc("square", "perimeter", [0])

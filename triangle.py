@@ -1,5 +1,6 @@
 import math
 
+
 def area(a, b, c):
     if type(a) == str or type(b) == str or type(c) == str:
         return "arguments must be integer"

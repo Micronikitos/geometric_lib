@@ -1,11 +1,11 @@
 import unittest
 import calculate
 
-class TestTriangle(unittest.TestCase):
 
-    '''
+class TestTriangle(unittest.TestCase):
+    """
     area test
-    '''
+    """
 
     def test_zero_area_triangle(self):
         res = calculate.calc("triangle", "area", [0, 0, 0])
@@ -23,9 +23,9 @@ class TestTriangle(unittest.TestCase):
         res = calculate.calc("triangle", "area", ["6", 2, "6"])
         self.assertEqual(res, "arguments must be integer")
 
-    '''
+    """
     perimeter test
-    '''
+    """
 
     def test_zero_perimeter_triangle(self):
         res = calculate.calc("triangle", "perimeter", [0, 0, 0])
