@@ -22,7 +22,7 @@ jobs:
       - name: Set developer info
         id: set_info
         run: |
-          echo "FULL_NAME=Моломожнов Никита" >> $GITHUB_ENV
+          echo "FULL_NAME=Моломожнов Никита Владимирович" >> $GITHUB_ENV
           echo "GROUP=М3111" >> $GITHUB_ENV
           echo "GITHUB_USER=${{ github.actor }}" >> $GITHUB_ENV
 
@@ -41,7 +41,8 @@ jobs:
           fi
 
       - name: Run tests
-        run: pytest
+        run: |
+          python -m unittest discovery -s tests -p "*.py"
 
       - name: Check code style
         run: flake8 .
