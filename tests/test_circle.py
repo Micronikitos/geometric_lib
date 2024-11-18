@@ -1,23 +1,44 @@
 import unittest
-from circle import area, perimeter
+import calculate
 
 class TestCircle(unittest.TestCase):
-    def test_area_positive(self):
-        self.assertAlmostEqual(area(1), 3.14159, places=5)
 
-    def test_perimeter_positive(self):
-        self.assertAlmostEqual(perimeter(1), 6.28318, places=5)
+    '''
+    area test
+    '''
 
-    def test_area_zero(self):
-        self.assertEqual(area(0), 0)
+    def test_zero_area_circle(self):
+        res = calculate.calc("circle", "area", [0])
+        self.assertEqual(res, 0)
 
-    def test_perimeter_zero(self):
-        self.assertEqual(perimeter(0), 0)
+    def test_simple_area_circle(self):
+        res = calculate.calc("circle", "area", [6])
+        self.assertEqual(res, 113.09733552923255)
 
-    def test_area_negative(self):
-        with self.assertRaises(ValueError):
-            area(-1)
+    def test_negative_area_circle(self):
+        res = calculate.calc("circle", "area", [-3])
+        self.assertEqual(res, "arguments must be positive")
 
-    def test_perimeter_invalid_type(self):
-        with self.assertRaises(TypeError):
-            perimeter("radius")
+    def test_string_area_circle(self):
+        res = calculate.calc("circle", "area", ["6"])
+        self.assertEqual(res, "arguments must be integer")
+
+    '''
+    perimeter test
+    '''
+
+    def test_zero_perimeter_circle(self):
+        res = calculate.calc("circle", "perimeter", [0])
+        self.assertEqual(res, 0)
+
+    def test_simple_perimeter_circle(self):
+        res = calculate.calc("circle", "perimeter", [6])
+        self.assertEqual(res, 37.69911184307752)
+
+    def test_negative_perimeter_circle(self):
+        res = calculate.calc("circle", "perimeter", [-3])
+        self.assertEqual(res, "arguments must be positive")
+
+    def test_string_perimeter_circle(self):
+        res = calculate.calc("circle", "perimeter", ["6"])
+        self.assertEqual(res, "arguments must be integer")

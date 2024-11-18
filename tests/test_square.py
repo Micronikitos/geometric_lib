@@ -1,20 +1,44 @@
 import unittest
-from square import area, perimeter
+import calculate
 
 class TestSquare(unittest.TestCase):
-    def test_area_positive(self):
-        self.assertEqual(area(2), 4)
 
-    def test_perimeter_positive(self):
-        self.assertEqual(perimeter(2), 8)
+    '''
+    area test
+    '''
 
-    def test_area_zero(self):
-        self.assertEqual(area(0), 0)
+    def test_zero_area_square(self):
+        res = calculate.calc("square", "area", [0])
+        self.assertEqual(res, 0)
 
-    def test_perimeter_negative(self):
-        with self.assertRaises(ValueError):
-            perimeter(-2)
+    def test_simple_area_square(self):
+        res = calculate.calc("square", "area", [6])
+        self.assertEqual(res, 36)
 
-    def test_area_invalid_type(self):
-        with self.assertRaises(TypeError):
-            area([5])
+    def test_negative_area_square(self):
+        res = calculate.calc("square", "area", [-3])
+        self.assertEqual(res, "arguments must be positive")
+
+    def test_string_area_square(self):
+        res = calculate.calc("square", "area", ["6"])
+        self.assertEqual(res, "arguments must be integer")
+
+    '''
+    perimeter test
+    '''
+
+    def test_zero_perimeter_square(self):
+        res = calculate.calc("square", "perimeter", [0])
+        self.assertEqual(res, 0)
+
+    def test_simple_perimeter_square(self):
+        res = calculate.calc("square", "perimeter", [6])
+        self.assertEqual(res, 24)
+
+    def test_negative_perimeter_square(self):
+        res = calculate.calc("square", "perimeter", [-3])
+        self.assertEqual(res, "arguments must be positive")
+
+    def test_string_perimeter_square(self):
+        res = calculate.calc("square", "perimeter", ["6"])
+        self.assertEqual(res, "arguments must be integer")
