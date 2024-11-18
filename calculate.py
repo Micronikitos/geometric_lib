@@ -55,3 +55,4 @@ if __name__ == "__main__":
 
     res = calc(fig, func, size)
     print(res)
+    
