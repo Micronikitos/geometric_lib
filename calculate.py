@@ -10,7 +10,7 @@ sizes = {}
 def calc(fig, func, size):
 	assert fig in figs
 	assert func in funcs
-
+	
 	result = eval(f'{fig}.{func}(*{size})')
 	return result
 
