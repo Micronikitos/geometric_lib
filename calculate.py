@@ -1,3 +1,7 @@
+import circle
+import triangle
+import square
+
 figs = ["circle", "square", "triangle"]
 funcs = ["perimeter", "area"]
 sizes = {}
@@ -12,6 +16,10 @@ def calc(fig, func, size):
 
 
 if __name__ == "__main__":
+    tmp1 = square.area(4)
+    tmp2 = triangle.area(2, 3, 4)
+    tmp3 = circle.area(6)
+
     func = ""
     fig = ""
     size = list()
@@ -40,7 +48,7 @@ if __name__ == "__main__":
                     int,
                     input(
                         "Input figure sizes separated by \
-                            space, 1 for circle and square\n"
+							space, 1 for circle and square\n"
                     ).split(" "),
                 )
             )
