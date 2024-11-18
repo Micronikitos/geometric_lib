@@ -2,7 +2,7 @@ import math
 
 
 def area(r):
-    if isinstance(r) == str:
+    if isinstance(r, str):
         return "arguments must be integer"
     if r < 0:
         return "arguments must be positive"
@@ -10,7 +10,7 @@ def area(r):
 
 
 def perimeter(r):
-    if isinstance(r) == str:
+    if isinstance(r, str):
         return "arguments must be integer"
     if r < 0:
         return "arguments must be positive"
