@@ -1,5 +1,5 @@
 def area(a):
-    if type(a) == str:
+    if isinstance(a) == str:
         return "arguments must be integer"
     if a < 0:
         return "arguments must be positive"
@@ -7,7 +7,7 @@ def area(a):
 
 
 def perimeter(a):
-    if type(a) == str:
+    if isinstance(a) == str:
         return "arguments must be integer"
     if a < 0:
         return "arguments must be positive"
