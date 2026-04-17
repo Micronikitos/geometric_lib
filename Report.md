@@ -71,4 +71,10 @@ git commit -m "Добавлена глава 3: Вход в систему"
 git push origin feature-login
 ```
 
+Создание фичи task-management
+```python
+brew install git-flow
+git flow init -d
+```
+
 
