@@ -19,3 +19,20 @@
 ```bash
 git clone https://github.com/Micronikitos/git-practice.git
 cd git-practice
+```
+##  2. Первый коммит и создание структуры книги
+Создан файл book.md с начальной структурой книги и отправлен на GitHub.
+
+```bash
+echo "# Название книги" > book.md
+echo "" >> book.md
+echo "## Глава 1: Введение" >> book.md
+echo "Здесь будет введение в тему книги." >> book.md
+echo "" >> book.md
+echo "## Глава 2: Основы Git" >> book.md
+echo "Основные понятия и команды Git." >> book.md
+
+git add book.md
+git commit -m "File added book.md"
+git push origin main
+```
