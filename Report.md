@@ -71,10 +71,11 @@ git commit -m "Добавлена глава 3: Вход в систему"
 git push origin feature-login
 ```
 
-Создание фичи task-management
+Создан файл task_manager.py:
 ```python
-brew install git-flow
-git flow init -d
+def create_task(title, description):
+    # Логика создания задачи
+    print(f"Создана новая задача: {title}")
 ```
 
 
