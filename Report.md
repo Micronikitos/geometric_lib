@@ -1,9 +1,5 @@
 # Лабораторная работа №5: Git Advanced Workshop
 
-**Студент:** [Ваше ФИО]
-**Группа:** [Ваша группа]
-**Дата:** [Дата выполнения]
-
 ---
 
 ## Цель работы
@@ -20,6 +16,13 @@
 git clone https://github.com/Micronikitos/git-practice.git
 cd git-practice
 ```
+
+￼
+
+￼
+
+---
+
 ##  2. Первый коммит и создание структуры книги
 Создан файл book.md с начальной структурой книги и отправлен на GitHub.
 
@@ -31,8 +34,41 @@ echo "Здесь будет введение в тему книги." >> book.md
 echo "" >> book.md
 echo "## Глава 2: Основы Git" >> book.md
 echo "Основные понятия и команды Git." >> book.md
-
 git add book.md
 git commit -m "File added book.md"
 git push origin main
 ```
+
+￼
+
+￼
+
+---
+
+##  3. Работа с ветками
+Создание ветки feature-login
+```bash
+git checkout -b feature-login
+git branch
+```
+
+￼
+## Добавление главы 3 в ветке feature-login
+Файл book.md дополнен главой 3:
+# Название книги
+
+## Глава 1: Введение
+Здесь будет введение в тему книги.
+
+## Глава 2: Основы Git
+Основные понятия и команды Git.
+
+## Глава 3: Вход в систему
+Раздел по новой функциональности входа в систему.
+```bash
+git add book.md
+git commit -m "Добавлена глава 3: Вход в систему"
+git push origin feature-login
+```
+
+
